@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- markdown-drop-reader:v1 -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="referrer" content="no-referrer">
+
+  <meta
+    http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob: https:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; font-src 'none'"
+  >
+
+  <title>Markdown Reader</title>
+
+  <link rel="stylesheet" href="vendor/github-markdown.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <strong>Markdown Reader</strong>
+
+      <span class="privacy">
+        Local file · rendered in this browser
+      </span>
+
+      <button
+        id="openAnother"
+        class="button subtle"
+        type="button"
+        hidden
+      >
+        Open another
+      </button>
+    </div>
+  </header>
+
+  <main class="page">
+
+    <section id="welcome" class="welcome">
+
+      <div
+        id="dropZone"
+        class="drop-zone"
+        tabindex="0"
+        role="button"
+      >
+
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M12 3v12m0-12 4 4m-4-4L8 7M5 14v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4"
+          />
+        </svg>
+
+        <h1>Drop a Markdown file</h1>
+
+        <p>
+          Your file is read only by this browser tab.
+          Nothing is uploaded.
+        </p>
+
+        <button
+          id="chooseFile"
+          class="button primary"
+          type="button"
+        >
+          Choose file
+        </button>
+
+        <small>.md · .markdown</small>
+
+      </div>
+
+      <p
+        id="message"
+        class="message"
+        role="status"
+      ></p>
+
+    </section>
+
+    <section
+      id="reader"
+      class="reader"
+      hidden
+    >
+
+      <div class="filebar">
+        <strong id="fileName"></strong>
+        <span>Rendered locally</span>
+      </div>
+
+      <article
+        id="markdownBody"
+        class="markdown-body"
+      ></article>
+
+    </section>
+
+  </main>
+
+  <input
+    id="fileInput"
+    type="file"
+    accept=".md,.markdown,text/markdown"
+    hidden
+  >
+
+  <script src="vendor/marked.umd.js"></script>
+  <script src="vendor/purify.min.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>
