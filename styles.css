@@ -1,7 +1,7 @@
 /* markdown-drop-reader:v1 */
 
 :root {
-  --bg: #f6f8fa;
+  --bg: #ffffff;
   --panel: #ffffff;
   --fg: #1f2328;
   --muted: #656d76;
@@ -69,7 +69,7 @@ button {
 }
 
 .page {
-  width: min(1100px, calc(100% - 32px));
+  width: min(1375px, calc(100% - 32px));
   margin: auto;
   padding: 44px 0 72px;
 }
@@ -156,8 +156,8 @@ button {
 
 .reader {
   overflow: hidden;
-  border: 1px solid var(--border);
-  border-radius: 6px;
+  border: 0;
+  border-radius: 0;
   background: var(--panel);
 }
 
@@ -184,7 +184,7 @@ button {
 }
 
 .markdown-body {
-  max-width: 980px;
+  max-width: 1225px;
   min-height: 360px;
   margin: auto;
   padding: 48px 56px 64px;
